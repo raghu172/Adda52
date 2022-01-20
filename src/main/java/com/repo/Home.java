@@ -20,7 +20,7 @@ public class Home {
 	public void clickOnRegisteringButton_ch(WebDriver driver) {
 		try {
 			if (driver!=null) {
-				driver.findElement(By.xpath("//span[text()='Heads-Up Novice-13']/ancestor::tr//span[text()='Registering']")).click();
+				driver.findElement(By.xpath("//span[text()='Heads-Up Novice-92']/ancestor::tr//span[text()='Registering']")).click();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -43,7 +43,7 @@ public class Home {
 	public void clickOnRegisteringButton_fire(WebDriver fdriver) {
 		try {
 			if (fdriver!=null) {
-				fdriver.findElement(By.xpath("//span[text()='Heads-Up Novice-13']/ancestor::tr//span[text()='Registering']")).click();
+				fdriver.findElement(By.xpath("//span[text()='Heads-Up Novice-92']/ancestor::tr//span[text()='Registering']")).click();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

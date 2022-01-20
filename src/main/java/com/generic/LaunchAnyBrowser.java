@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -75,13 +76,12 @@ public class LaunchAnyBrowser {
 	public WebDriver openFireFox(WebDriver driver,String hubURL,String testurl, String userName, String password) {
 		try {
 			DesiredCapabilities cap = new DesiredCapabilities();
+			cap.setCapability(CapabilityType.PLATFORM_NAME, Platform.WIN10);
 			cap.setCapability(CapabilityType.BROWSER_NAME, BrowserType.FIREFOX);
 			URL url = new URL(hubURL);
 			driver = new RemoteWebDriver(url,cap);
 			driver.get(testurl);
 			driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-			driver.findElement(By.xpath("//label[text()='Username / Email / Mobile']/preceding::input[@formcontrolname='username']")).sendKeys(userName);
-			driver.findElement(By.xpath("//label[text()='Password']/preceding::input[@formcontrolname='password']")).sendKeys(password);
 		} catch (Exception e) {
 		e.printStackTrace();
 		}
